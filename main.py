@@ -1,6 +1,13 @@
 import streamlit as st
 import requests
-
+# Add custom CSS to hide the GitHub icon
+hide_github_icon = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 # Replace with your actual Langflow ID, Flow ID, and Application Token
 LANGFLOW_ID = "b9553a56-16b8-48b1-a433-bbfad3812afa"
 FLOW_ID = "187aa7bf-2723-42df-8e01-2a89e0c65740"
