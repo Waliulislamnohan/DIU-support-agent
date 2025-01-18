@@ -1,10 +1,10 @@
 import streamlit as st
 import requests
 
-# Replace with your actual Langflow ID, Flow ID, and Application Token
-LANGFLOW_ID = "b9553a56-16b8-48b1-a433-bbfad3812afa"
-FLOW_ID = "187aa7bf-2723-42df-8e01-2a89e0c65740"
-APPLICATION_TOKEN = "AstraCS:ICkDTaQseEKbRwLvWduUKAfq:e4ea7b9fce78f672e5b1ab81830f33cb87be0706a7b8dc9e044c39203e42a348"
+# Retrieve secrets from the secrets.toml file
+LANGFLOW_ID = st.secrets["LANGFLOW_ID"]
+FLOW_ID = st.secrets["FLOW_ID"]
+APPLICATION_TOKEN = st.secrets["APPLICATION_TOKEN"]
 
 # Base URL for the Langflow API
 BASE_API_URL = f"https://api.langflow.astra.datastax.com/lf/{LANGFLOW_ID}/api/v1/run/{FLOW_ID}"
@@ -33,8 +33,8 @@ def run_flow(input_message):
         raise Exception(f"Error: {response.status_code}, {response.text}")
 
 # Streamlit app setup
-st.set_page_config(page_title="DIU support bot", layout="wide")
-st.title("DIU support bot")
+st.set_page_config(page_title="DIU Support Bot", layout="wide")
+st.title("DIU Support Bot")
 
 # Initialize session state for messages
 if "messages" not in st.session_state:
