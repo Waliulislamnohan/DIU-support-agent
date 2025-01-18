@@ -40,6 +40,7 @@ custom_css = """
 <style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
+div.viewerBadge_container__1QSob {visibility: hidden;}
 .stApp {
     background-color: #0000FF;
 }
