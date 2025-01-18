@@ -34,6 +34,19 @@ def run_flow(input_message):
 
 # Streamlit app setup
 st.set_page_config(page_title="DIU support bot", layout="wide")
+
+# Add custom CSS to remove Fork and GitHub icons and set background color to blue
+custom_css = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+.stApp {
+    background-color: #0000FF;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 st.title("DIU support bot")
 
 # Initialize session state for messages
